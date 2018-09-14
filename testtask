@@ -1,0 +1,48 @@
+There currently is no way in the app for the Seller to upload their listings themselves.
+Right now everything related to a Sellers listing is vetted and then manually entered in the backend by us.
+When the user signs up as a Seller on our website, we then mark them as a Seller on back4app. 
+
+Sellers are then sent a spreadsheet from us in an email that asks for all the remaining information related to the listing of their service.
+Things such as listing name, listing price, listing quantity/units, and listing description.
+
+In the "user module" on the backend all users by default are marked as FALSE under "is Merchant" or "Is Service Provider" field,  when users signs up. 
+
+"Is Merchant" or is "Service Provider" gets set to TRUE manually, if the users signs up as a Seller on our website.
+If the user is a Seller inside the app the user will get a red star beside their avatar on the People Nearby and Connections pages.
+
+Here is a Purposs backend walkthrough video: https://youtu.be/POIgRzwiIr8   16:22 Mins
+
+How about creating a tab inside the app that says "Become A Seller" it opens up directly to the user's camera just like Snapchat (please see attachment) when it's selected.
+After user snaps a photo or selects one from their Gallery, we then bring the user to a JSON form screen (please see attachment).
+The form will have 5 labeled fields on one screen:
+
+1. First Name/Last Name of Seller (This can be auto-filled to save time).
+2. Occupation (drop-down menu) or manual input.
+3. Price/Rate of Service.
+4. Unit/Quantity.
+5. Description. /500 characters max.
+
+Once the user fills in this information Image Optim resizes their photo and the JSON form automatically fills in the corresponding "MenuItem fields" on the backend under the correct "Venue"(Please see attachment).
+
+Tunji, if you think there is an easier way by all means do it the easier way.
+
+
+
+
+First the seller gets created in venue module. You have to classify a new Seller to the "CITY"pointer under venue module.
+Then once the Seller is registered to the "CITY" (Hint: there is only one city for all Sellers), it will automatically assign the Seller their unique Seller ID (called objectID) in the venue module. The "NAME of SELLERS BUSINESS" also gets added to the venue module under "name string".
+The Sellers "cover image file" (the image users see on "Select A Business screen"- this can be labeled on the form you create as brand photo/Selfie photo), this gets added to the venue module.
+Once those four things occur,  then the Seller can attach their services they are selling to their unique Seller ID (called venue pointer) column under the MenuItem Module. 
+
+Under the MenuItem Module, A Seller creates their listing of services.
+Each service they add to their Seller ID (Venue pointer) column gets issued a unique identifier (called ObjectID- found on the far left column) under the MenuItem Module. 
+
+On the MenuItem Module the Seller classifies their "Price of service (called price number)", "Unit/quantity of service (called unit string), "Image of service" (called image file), name of service (called name string), Description of services (called description string).
+
+The form would fill in the information on the venue module and the MenuItem Module.
+
+You can see the brand photo/Selfie photo uploaded to venue module when the column "isEnabled Boolean" is set to "TRUE" under the venue module, which we manually set once we have reviewed the image. (See attachment labeled as A).
+
+You can see the "Image of service" uploaded to MenuItem module when the column "isEnabled Boolean" is set to "TRUE" under the MenuItem module, which we manually set once we have reviewed the image.
+The services that get listed by a Seller appears under their own unique "Venue Pointer" on MenuItem module- and appear on front-end UI under Sellers "Name String). (See attachment labeled as B).
+
